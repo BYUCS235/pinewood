@@ -12,7 +12,7 @@ class RaceInterface
 {
 public:
 	RaceInterface() {}
-	virtual ~RaceInterface() {}
+	~RaceInterface() {}
 
 	/*
 	*	addCar(string)
@@ -20,6 +20,7 @@ public:
 	*	Adds a new car to the collection of cars in the race. 
 	*
 	*	Return true if a new car was added; false otherwise.
+	*   The info string should have the name, type, speed
 	*/
 	virtual bool addCar(string info) = 0;
 

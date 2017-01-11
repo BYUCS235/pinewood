@@ -14,9 +14,9 @@ int main() {
 	CarInterface *car1 = rptr->getCar("Speedy");
 	CarInterface *car2 = rptr->getCar("Slow");
 	if(car1->getSpeed() > car2->getSpeed()) {
-	  cout << car1.getName << "Won!"<<endl;
+	  cout << car1->getName() << "Won!"<<endl;
 	} else {
-	  cout << car2.getName << "Won!"<<endl;
+	  cout << car2->getName() << "Won!"<<endl;
 	}
 	return 0;
 }
