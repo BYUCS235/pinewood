@@ -15,4 +15,4 @@ If you have worked with Cub Scouts, you know they get really excited about the p
   * Create a concrete class for Panda that inherits from Car.h Put it in Panda.h Put the implementation in Panda.cpp
 ## So, Lets get started
 Your UML should look something like this
-
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/be/PinewoodFinish.jpg" width="200">
