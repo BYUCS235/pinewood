@@ -4,7 +4,7 @@
 class Car: public CarInterface {
     public:
 	Car(string myname, int myspeed) {
-		cout << "In Car Constructor";
+		cout << "In Car Constructor "<<myname<<" "<<myspeed<<endl;
 		name = myname; speed = myspeed;
 	};
 	~Car() {}
