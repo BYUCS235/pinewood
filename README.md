@@ -1,4 +1,4 @@
-# pinewood derby simulation program
+# Pinewood derby simulation program
 If you have worked with Cub Scouts, you know they get really excited about the pinewood derby race.  If your Cub Scout Pack is low on funds, they probably only have a 2 lane track and so you will have to race each pair of cars against each other to determine the winner.  Some cars have rockets on them, some cars have big stuffed animals on top that increase the wind resistance, but all of them need to be kept in the race conainer.  Build an application to simulate a pinewood derby race.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/PinewoodFinish.jpg" width="200">
@@ -13,3 +13,6 @@ If you have worked with Cub Scouts, you know they get really excited about the p
   * Create a concrete class for Car that inherits from CarInterface, put it in Car.h Put the implementation in Car.cpp
   * Create a concrete class for Rocket that inherits from Car.h Put it in Rocket.h Put the implementation in Rocket.cpp
   * Create a concrete class for Panda that inherits from Car.h Put it in Panda.h Put the implementation in Panda.cpp
+## So, Lets get started
+Your UML should look something like this
+
