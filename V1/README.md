@@ -113,3 +113,24 @@ int Rocket::getSpeed() const
     return speed*SPEED_INCREASE;
 }
 	```
+7.  Now we just need to do the same thing to create Panda.h
+	```
+#pragma once
+#include "Car.h"
+
+class Panda: public Car {
+public:    
+    Panda(string pandaname, int pandaspeed):Car(pandaname,pandaspeed){};
+    ~Panda(){};
+    int getSpeed() const;
+};
+	```
+8. And Panda.cpp
+	```
+#include "Panda.h"
+#define SPEED_DECREASE 2
+int Panda::getSpeed() const
+{
+    return speed/SPEED_DECREASE;
+}
+	```
