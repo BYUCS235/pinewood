@@ -135,4 +135,4 @@ int Panda::getSpeed() const
     return speed/SPEED_DECREASE;
 }
 	```
-4. Now we have the basic project created, but we still have stubs in Race.cpp so we need to [finish](V2/README.md)
+4. Now we have the basic project created, but we still have stubs in Race.cpp so we need to [finish](../V2/README.md)
