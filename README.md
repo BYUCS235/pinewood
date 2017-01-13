@@ -13,6 +13,4 @@ If you have worked with Cub Scouts, you know they get really excited about the p
   * Create a concrete class for Car that inherits from CarInterface, put it in Car.h Put the implementation in Car.cpp
   * Create a concrete class for Rocket that inherits from Car.h Put it in Rocket.h Put the implementation in Rocket.cpp
   * Create a concrete class for Panda that inherits from Car.h Put it in Panda.h Put the implementation in Panda.cpp
-## So, Lets get started
-Your UML should look something like this
-<img src="https://mjcleme.github.io/pinewood.png" width="600">
+
