@@ -103,7 +103,8 @@ class Rocket:public Car {
     int getSpeed() const;
 };
 	```
-6. Here is the implementation for Rocket.cpp.  Notice that in this case, we are including the full implementation of getSpeed that multiplies the parent class "speed" variable by 2.
+6. Here is the implementation for Rocket.cpp.  Notice that in this case, we are including the full implementation of getSpeed that multiplies the parent class "speed" variable by 2.  Notice that we are putting magic numbers in defines.
+
 	```
 #include "Rocket.h"
 #define SPEED_INCREASE 2
