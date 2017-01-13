@@ -126,6 +126,7 @@ public:
 };
 	```
 8. And Panda.cpp
+
 	```
 #include "Panda.h"
 #define SPEED_DECREASE 2
