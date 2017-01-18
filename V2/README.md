@@ -26,6 +26,7 @@ bool Race::addCar(string info) {
 }
   ```
 2. The next function to fill in is removeCar.  We will be passed a name.  When we find it, call erase with the iterator corresponding to the position of the car.
+
   ```
   bool Race::removeCar(string name) {
     for (int i = 0; i < carVec.size(); i++) {
@@ -39,6 +40,7 @@ bool Race::addCar(string info) {
   ```
 3. We fill in getCar by searching through the vector until we find a car with the same name.
   ```
+  
 CarInterface* Race::getCar(string name) {
     stringstream ss;
 	for (Car* cp : carVec) {
