@@ -1,15 +1,52 @@
 # pinewood derby simulation program
-If you have worked with Cub Scouts, you know they get really excited about the pinewood derby race.  If your Cub Scout Pack is low on funds, they probably only have a 2 lane track and so you will have to race each pair of cars against each other to determine the winner.  Some cars have rockets on them, some cars have big stuffed animals on top that increase the wind resistance, but all of them need to be kept in the race conainer.  Build an application to simulate a pinewood derby race.
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/b/be/PinewoodFinish.jpg" width="200">
-
-1) First, lets develop a UML diagram for our application.  What are the objects and what are the "isa" and "hasa" relationships?
-* Our main has a pointer to a Race.  You will need to create a new Race object that should inherit from the RaceInterface abstract class.
-* You should have a rocket and panda car classes that inherit from the CarInterface abstract class.
-* Practice drawing the UML diagram for your application.
-2) Now add the functions that will be needed for each of these objects
-3) Once you have the UML document, you can start creating concrete classes that inherit from your abstract classes.
-* Create a concrete class for Race that inherits from RaceInterface, put it in Race.h  Put the implementation in Race.cpp
-* Create a concrete class for Car that inherits from CarInterface, put it in Car.h Put the implementation in Car.cpp
-* Create a concrete class for Rocket that inherits from Car.h Put it in Rocket.h Put the implementation in Rocket.cpp
-* Create a concrete class for Panda that inherits from Car.h Put it in Panda.h Put the implementation in Panda.cpp
+## Finishing the implementation
+1. First we need to fill in the Race.h functions, lets start with addCar.  We wil use stringstream to parse the Name Type speed string we received.  Then we create a car of the specified type and push it into our vector.
+  ```
+bool Race::addCar(string info) {
+  stringstream ss(info);
+	string name, type;
+	int speed;
+		
+	if (ss >> name >> type >> speed) {
+	  cout << "addCar got "<<name<<" "<<type<<" "<<speed<<endl;
+		if (type == "R") { /* Rocket */
+			cout << "Adding Rocket"<<endl;
+			carVec.push_back(new Rocket(name, speed));
+		}
+		else if (type == "P") { /* Panda */
+		  cout << "Adding Panda"<<endl;
+			carVec.push_back(new Panda(name, speed));
+		}
+		else {
+			return false; //not a valid type of car
+		}
+		return true;
+	}
+	return false; //invalid input, not enough tokens or wrong input type
+}
+  ```
+2. The next function to fill in is removeCar.  We will be passed a name.  When we find it, call erase with the iterator corresponding to the position of the car.
+  ```
+  bool Race::removeCar(string name) {
+    for (int i = 0; i < carVec.size(); i++) {
+		if (carVec.at(i)->getName() == name) {
+			carVec.erase(carVec.begin() + i);
+			return true;
+		}
+	}
+	return false;
+}
+  ```
+3. We fill in getCar by searching through the vector until we find a car with the same name.
+  ```
+CarInterface* Race::getCar(string name) {
+    stringstream ss;
+	for (Car* cp : carVec) {
+		if (cp->getName() == name) {
+			return cp;
+		}
+	}
+	return NULL;
+}
+  ```
+  
