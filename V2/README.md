@@ -42,7 +42,6 @@ bool Race::addCar(string info) {
   ```
   
 CarInterface* Race::getCar(string name) {
-    stringstream ss;
 	for (Car* cp : carVec) {
 		if (cp->getName() == name) {
 			return cp;
@@ -51,4 +50,7 @@ CarInterface* Race::getCar(string name) {
 	return NULL;
 }
   ```
+
+4. Now your full application should be working and you should see something like this when you type "make" and "./pinewood
+
   
