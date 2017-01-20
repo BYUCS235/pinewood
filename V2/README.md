@@ -119,3 +119,30 @@ int main() {
 	cout << "Created a car "<<*testcar<<endl;
   ```
 Now you can print out a Car anytime you have a question as to what it contains.
+
+10. And you will want to add the "-g" flag to the compiler to allow you to debug your code when it crashes
+
+  ```
+CFLAGS=-std=c++11 -g
+
+pinewood: pinewood.o Race.o Car.o Panda.o Rocket.o
+	g++ $(CFLAGS) pinewood.o Race.o Car.o Panda.o Rocket.o -o pinewood
+	
+pinewood.o: pinewood.cpp Race.h
+	g++ $(CFLAGS) -c pinewood.cpp
+		
+Race.o: Race.cpp Race.h CarInterface.h Rocket.h Panda.h RaceInterface.h Car.h
+	g++ $(CFLAGS) -c Race.cpp
+
+Car.o: Car.cpp Car.h CarInterface.h 
+	g++ $(CFLAGS) -c Car.cpp
+		
+Panda.o: Panda.cpp Panda.h Car.h CarInterface.h 
+	g++ $(CFLAGS) -c Panda.cpp
+		
+Rocket.o: Rocket.cpp Rocket.h Car.h CarInterface.h 
+	g++ $(CFLAGS) -c Rocket.cpp
+
+clean:
+	rm pinewood.o Race.o Car.o Panda.o Rocket.o
+  ```
