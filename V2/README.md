@@ -52,5 +52,31 @@ CarInterface* Race::getCar(string name) {
   ```
 
 4. Now your full application should be working and you should see something like this when you type "make" and "./pinewood
-
-  
+  ```
+mjcleme:~/workspace/V2 $ ./pinewood
+Start Size should be zero 0
+addCar got Speedy R 20
+Adding Rocket
+In Car Constructor Speedy 20
+Size should be 1 1
+addCar got Slow P 10
+Adding Panda
+In Car Constructor Slow 10
+Size should be 2 2
+In Car getName Speedy
+In Car getName Speedy
+In Car getName Slow
+Compare 40 5
+In Car getName Speedy
+Speedy Won!
+In Car getName Slow
+In Car getName Speedy
+In Car getName Slow
+Removed car2 Size should be one 1
+  ```
+5. If this were the lab, then you could compare this output to the expected output from the lab by redirecting the output to a file and then using sdiff to show you the differences.
+  ```
+  ./pinewood > myoutput.txt
+  sdiff myoutput.txt key_file.txt
+  ```
+  You will then see a side by side comparison between your output and what was expected in the lab.
