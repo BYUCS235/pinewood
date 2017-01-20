@@ -75,6 +75,7 @@ In Car getName Slow
 Removed car2 Size should be one 1
   ```
 5. If this were the lab, then you could compare this output to the expected output from the lab by redirecting the output to a file and then using sdiff to show you the differences.
+
   ```
   ./pinewood > myoutput.txt
   sdiff myoutput.txt key_file.txt
