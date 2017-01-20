@@ -81,3 +81,40 @@ Removed car2 Size should be one 1
   sdiff myoutput.txt key_file.txt
   ```
   You will then see a side by side comparison between your output and what was expected in the lab.
+  
+ 6. Now you will want to test your lab.  Don't rely on the TA test script, but test to make sure things are working by inserting test code into main().  You can comment your tests out when you want to compare with the key_file.  It would be really nice to be able to print out Car objects to make sure that things are working as you expect.  Remember that the Rocket and Panda both return a modified version of "speed", so it would be nice to see exactly what is there.  To do this, we are going to add an operator to "std" to allow us to directly print our cars out to "stdout".  First, put in a concrete getSpeed() function to Car.h 
+ 
+   ```
+virtual int getSpeed() const;
+   ```
+And add the implementation to Car.cpp
+  ```
+int Car::getSpeed() const {
+	return (speed);
+};
+  ```
+7. Now you can create a new Car since it is not an abstract class.  Lets add the operator to Car.h.
+
+  ```
+friend std::ostream& operator<< (std::ostream &out, const Car &mycar);
+  ```
+The operator returns an ostream reference and it passed two parameters (and ostream reference and a Car reference). 
+8. Now add the implementation to Car.cpp
+  ```
+std::ostream& operator<< (std::ostream &out, const Car &ocar)
+{
+    // Since operator<< is a friend of the Car class, we can access Car's members directly.
+    out << "Car(" << ocar.name << ", " << ocar.speed << ")";
+ 
+    return out;
+}
+  ```
+9. And add some test code to pinewood.cpp
+
+  ```
+#include "Car.h"
+int main() {
+	Car *testcar = new Car("testy", 300);
+	cout << "Created a car "<<*testcar<<endl;
+  ```
+Now you can print out a Car anytime you have a question as to what it contains.
