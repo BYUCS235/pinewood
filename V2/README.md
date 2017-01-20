@@ -84,10 +84,11 @@ Removed car2 Size should be one 1
   
  6. Now you will want to test your lab.  Don't rely on the TA test script, but test to make sure things are working by inserting test code into main().  You can comment your tests out when you want to compare with the key_file.  It would be really nice to be able to print out Car objects to make sure that things are working as you expect.  Remember that the Rocket and Panda both return a modified version of "speed", so it would be nice to see exactly what is there.  To do this, we are going to add an operator to "std" to allow us to directly print our cars out to "stdout".  First, put in a concrete getSpeed() function to Car.h 
  
-   ```
+  ```
 virtual int getSpeed() const;
-   ```
+  ```
 And add the implementation to Car.cpp
+
   ```
 int Car::getSpeed() const {
 	return (speed);
