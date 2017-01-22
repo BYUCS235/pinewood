@@ -58,7 +58,7 @@ Your UML should look something like this
 	#include "CarInterface.h"
 
 	class Car: public CarInterface {
-	    public:
+	public:
 		Car(string myname, int myspeed) {
 			cout << "In Car Constructor";
 			name = myname; speed = myspeed;
