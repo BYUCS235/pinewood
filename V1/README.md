@@ -1,6 +1,6 @@
 # pinewood derby simulation implementation
 ## So, Lets get started
-Your UML should look something like this
+Your design (in UML) should look something like this
 <img src="https://mjcleme.github.io/pinewood.png" width="600">
 
 1. First, lets create the Race class in Race.h.  Here we use the notation used in the book to keep the class from being defined multiple times.  The `#ifndef RACE_H_` will protect the class from being included again if it has already been included. Notice that we inherit from RaceInterface, and include the array of Cars.  The main.cpp code will be calling addCar with a string that will create either a Panda or a Rocket, so we will include those files for future implementation.  But for now, the major addition is the vector of Car pointers.
