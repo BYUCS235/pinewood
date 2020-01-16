@@ -115,7 +115,7 @@ std::ostream& operator<< (std::ostream &out, const Car &ocar)
   ```
 #include "Car.h"
 int main() {
-	Car *testcar = new Car("testy", 300);
+	Car *testcar = new Panda("testy", 300);
 	cout << "Created a car "<<*testcar<<endl;
   ```
 Now you can print out a Car anytime you have a question as to what it contains.
